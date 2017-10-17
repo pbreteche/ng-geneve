@@ -1,0 +1,20 @@
+article {
+  max-width: 120ch;
+  margin: 0 auto;
+  padding: 1ch 0;
+  background-color: azure;
+}
+
+article h1 {
+  text-align: center;
+  font-family: 'AlexBrushRegular', cursive;
+  font-size: 4em;
+  text-shadow: 0 0 1em white;
+}
+
+article dl {
+  box-shadow: 0 0 1em 0 gold;
+  padding: 1ch 1em;
+  border-radius: 1em;
+  margin: 0 10%;
+}

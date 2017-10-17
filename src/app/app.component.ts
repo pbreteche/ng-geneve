@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ContactBookContact} from './contact-book-contact';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  contact: ContactBookContact;
+
+  constructor() {
+    this.contact = new ContactBookContact('Emmanuel', 'Macron', 'emacron@president.gouv.fr');
+  }
 }
