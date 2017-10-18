@@ -9,4 +9,19 @@
     <dt>Courriel</dt>
     <dd>{{leContactEnDetail.email}}</dd>
   </dl>
+<!--
+  <div>
+    <label for="recipient">Pour:</label>
+    <input type="text" id="recipient" />
+  </div>
+  <div>
+    <label for="sender">De:</label>
+    <input type="text" id="sender" />
+  </div>
+  -->
+  <div>
+    <label for="message">Message:</label>
+    <input type="text" id="message" #messageRef />
+  </div>
+  <button (click)="sendMessage(leContactEnDetail.email, messageRef.value)">Envoyer</button>
 </article>

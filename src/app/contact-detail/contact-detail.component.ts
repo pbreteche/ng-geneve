@@ -17,4 +17,8 @@ export class ContactDetailComponent {
   like() {
     this.likes++;
   }
+
+  sendMessage(recipient: string, value: string) {
+    console.info('Message envoyé à ' + recipient, value);
+  }
 }
