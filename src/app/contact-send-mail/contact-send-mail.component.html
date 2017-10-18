@@ -1,0 +1,23 @@
+<form #mailForm="ngForm">
+  <div>
+    <label for="recipient">Destinataire</label>
+    <input type="email" id="recipient" name="recipient" [(ngModel)]="mail.recipient" required email>
+  </div>
+  <div>
+    <label for="sender">Expéditeur</label>
+    <input type="email" id="sender" name="sender" [(ngModel)]="mail.sender" required>
+  </div>
+  <div>
+    <p
+       [hidden]="objectModel.valid || objectModel.untouched">
+      Une phrase d'explication
+    </p>
+    <label for="object">Objet</label>
+    <input #objectModel="ngModel" type="text" id="object" name="object" [(ngModel)]="mail.object" required  pattern="[a-zA-Z _-]+">
+  </div>
+  <div>
+    <label for="body">Corps</label>
+    <textarea id="body" cols="30" rows="10" name="body"  [(ngModel)]="mail.body"></textarea>
+  </div>
+  <button (click)="sendMail(); mailForm.reset()" [disabled]="mailForm.form.invalid">Envoyer</button>
+</form>
