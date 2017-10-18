@@ -9,6 +9,12 @@ import {ContactBookContact} from '../contact-book-contact';
 export class ContactDetailComponent {
    @Input() leContactEnDetail: ContactBookContact;
 
+   likes = 0;
+
   constructor() {
+  }
+
+  like() {
+    this.likes++;
   }
 }
