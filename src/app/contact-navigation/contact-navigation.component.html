@@ -1,0 +1,7 @@
+<nav>
+  <ul>
+    <li *ngFor="let contact of contacts">
+      <a (click)="selectContact(contact)">{{contact.fullName}}</a>
+    </li>
+  </ul>
+</nav>

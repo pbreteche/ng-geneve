@@ -2,3 +2,15 @@
 body {
   background-color: white;
 }
+
+.main-workspace {
+  display: flex;
+}
+
+.main-workspace app-contact-navigation {
+  flex: 80ch 0 1;
+}
+
+.main-workspace app-contact-detail {
+  flex: auto 0 2;
+}

@@ -1,4 +1,10 @@
-<app-contact-title [leContactDuTitre]="contact"></app-contact-title>
-<app-contact-detail [leContactEnDetail]="contact"></app-contact-detail>
-
-
+<app-contact-title [leContactDuTitre]="currentContact"></app-contact-title>
+<div class="main-workspace">
+  <app-contact-navigation
+    [contacts]="contacts"
+    (contactSelected)="changeCurrentContact($event)"
+  ></app-contact-navigation>
+  <app-contact-detail [leContactEnDetail]="currentContact">
+    Les détails ne sont pas chargés
+  </app-contact-detail>
+</div>
