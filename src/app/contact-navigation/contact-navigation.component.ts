@@ -1,5 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ContactBookContact} from '../contact-book-contact';
+import {ContactBookService} from '../contact-book.service';
+import {CurrentContactService} from '../current-contact.service';
 
 @Component({
   selector: 'app-contact-navigation',
@@ -8,15 +10,19 @@ import {ContactBookContact} from '../contact-book-contact';
 })
 export class ContactNavigationComponent implements OnInit {
 
-  @Input() contacts: ContactBookContact[];
-  @Output() contactSelected = new EventEmitter<ContactBookContact>();
-
-  constructor() { }
+  constructor(
+    private contactBook: ContactBookService,
+    private currentContact: CurrentContactService
+  ) { }
 
   ngOnInit() {
   }
 
+  get contacts(): ContactBookContact[] {
+    return this.contactBook.contacts;
+  }
+
   selectContact(contact: ContactBookContact) {
-    this.contactSelected.emit(contact);
+    this.currentContact.contact = contact;
   }
 }

@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ContactBookContact} from '../contact-book-contact';
+import {CurrentContactService} from '../current-contact.service';
 
 @Component({
   selector: 'app-contact-detail',
@@ -7,11 +8,13 @@ import {ContactBookContact} from '../contact-book-contact';
   styleUrls: ['./contact-detail.component.css']
 })
 export class ContactDetailComponent {
-   @Input() leContactEnDetail: ContactBookContact;
-
    likes = 0;
 
-  constructor() {
+  constructor(private currentContact: CurrentContactService) {
+  }
+
+  get leContactEnDetail(): ContactBookContact {
+    return this.currentContact.contact;
   }
 
   like() {

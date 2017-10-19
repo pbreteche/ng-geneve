@@ -1,11 +1,6 @@
-<app-contact-title [leContactDuTitre]="currentContact"></app-contact-title>
+<app-contact-title></app-contact-title>
 <app-contact-send-mail></app-contact-send-mail>
 <div class="main-workspace">
-  <app-contact-navigation
-    [contacts]="contactBook.contacts"
-    (contactSelected)="changeCurrentContact($event)"
-  ></app-contact-navigation>
-  <app-contact-detail [leContactEnDetail]="currentContact">
-    Les détails ne sont pas chargés
-  </app-contact-detail>
+  <app-contact-navigation></app-contact-navigation>
+  <app-contact-detail></app-contact-detail>
 </div>
