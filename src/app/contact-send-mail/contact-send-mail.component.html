@@ -19,5 +19,14 @@
     <label for="body">Corps</label>
     <textarea id="body" cols="30" rows="10" name="body"  [(ngModel)]="mail.body"></textarea>
   </div>
+  <div *ngFor="let cc of mail.cc; let i=index; trackBy: trackByIndex">
+    <input type="text" id="cc{{i}}" name="cc{{i}}" [(ngModel)]="mail.cc[i]">
+    <button (click)="removeCarbonCopy(i)">-</button>
+  </div>
+  <div class="form-group">
+    <label for="cc">Nouvelle copie carbone</label>
+    <input [(ngModel)]="newCarbonCopy"  type="text" id="cc" name="cc">
+    <button (click)="addCarbonCopy()">+</button>
+  </div>
   <button (click)="sendMail(); mailForm.reset()" [disabled]="mailForm.form.invalid">Envoyer</button>
 </form>

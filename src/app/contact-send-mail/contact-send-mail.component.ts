@@ -5,7 +5,8 @@ class Mail {
   sender: string;
   object: string;
   body: string;
-  cc: string[];
+  cc: string[] = [];
+
 }
 
 @Component({
@@ -15,6 +16,7 @@ class Mail {
 })
 export class ContactSendMailComponent{
   mail = new Mail();
+  newCarbonCopy: string;
 
   constructor() { }
 
@@ -23,4 +25,15 @@ export class ContactSendMailComponent{
     this.mail = new Mail();
   }
 
+  addCarbonCopy() {
+    this.mail.cc.push(this.newCarbonCopy);
+    this.newCarbonCopy = '';
+  }
+
+  trackByIndex(index: number, dish: string){
+    return index;
+  }
+  removeCarbonCopy(i: number) {
+    this.mail.cc.splice(i, 1);
+  }
 }
