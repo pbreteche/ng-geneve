@@ -20,7 +20,8 @@
     <textarea id="body" cols="30" rows="10" name="body"  [(ngModel)]="mail.body"></textarea>
   </div>
   <div *ngFor="let cc of mail.cc; let i=index; trackBy: trackByIndex">
-    <input type="text" id="cc{{i}}" name="cc{{i}}" [(ngModel)]="mail.cc[i]">
+    <label [htmlFor]="'cc' + i">cc:</label>
+    <input type="text" [id]="'cc'+i" name="cc{{i}}" [(ngModel)]="mail.cc[i]">
     <button (click)="removeCarbonCopy(i)">-</button>
   </div>
   <div class="form-group">
