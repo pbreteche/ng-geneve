@@ -1,8 +1,8 @@
 export class Contact {
   constructor(
     public firstName = '',
-    public lastName: string,
-    public email: string
+    public lastName = '',
+    public email = ''
   ) {}
 
   get fullName(): string {

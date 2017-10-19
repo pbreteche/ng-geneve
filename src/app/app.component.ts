@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {Contact} from './contact';
-import {ContactBookService} from './contact-book.service';
 import {CurrentContactService} from './current-contact.service';
 
 @Component({

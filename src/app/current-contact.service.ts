@@ -8,7 +8,11 @@ export class CurrentContactService {
   private _contact: Contact;
 
   constructor(private contactBook: ContactBookService) {
-    this._contact = contactBook.contacts[0];
+    this._contact = new Contact('Anne', 'O\'Nyme', 'anonyme@example.com');
+
+    this.contactBook.getContacts().then(
+      contacts => this._contact = contacts[0]
+    );
   }
 
   get contact(): Contact {
@@ -16,10 +20,6 @@ export class CurrentContactService {
   }
 
   set contact(contact: Contact) {
-    if (this.contactBook.contacts.indexOf(contact) == -1) {
-      throw `Ne peut être contact courrant, il n'est pas dans la liste`
-    }
     this._contact = contact;
-
   }
 }

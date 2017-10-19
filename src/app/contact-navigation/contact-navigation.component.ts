@@ -9,6 +9,7 @@ import {CurrentContactService} from '../current-contact.service';
   styleUrls: ['./contact-navigation.component.css']
 })
 export class ContactNavigationComponent implements OnInit {
+  public contacts: Contact[] = [];
 
   constructor(
     private contactBook: ContactBookService,
@@ -16,11 +17,11 @@ export class ContactNavigationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.contactBook.getContacts().then(
+      contacts =>  this.contacts = contacts
+    )
   }
 
-  get contacts(): Contact[] {
-    return this.contactBook.contacts;
-  }
 
   selectContact(contact: Contact) {
     this.currentContact.contact = contact;

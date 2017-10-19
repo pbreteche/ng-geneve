@@ -1,5 +1,5 @@
 export const API_CONFIG = {
-  url: 'api.example.com',
+  url: 'api/contacts',
   username: 'jdoe@example.com',
   password: 'secret'
 };

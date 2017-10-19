@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ContactTitleComponent } from './contact-title/contact-title.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { ContactNavigationComponent } from './contact-navigation/contact-navigation.component';
 import { ContactSendMailComponent } from './contact-send-mail/contact-send-mail.component';
-import {FormsModule} from '@angular/forms';
 import {ContactBookService} from './contact-book.service';
 import {API_CONFIG} from './config';
-import {contactBookServiceFactory} from './contact-book-service.factory';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {contactBookServiceFactory} from './contact-book-service.factory';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [
     ContactBookService,
