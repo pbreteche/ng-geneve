@@ -2,7 +2,7 @@
 <app-contact-send-mail></app-contact-send-mail>
 <div class="main-workspace">
   <app-contact-navigation
-    [contacts]="contacts"
+    [contacts]="contactBook.contacts"
     (contactSelected)="changeCurrentContact($event)"
   ></app-contact-navigation>
   <app-contact-detail [leContactEnDetail]="currentContact">
