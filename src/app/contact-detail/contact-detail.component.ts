@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {ContactBookContact} from '../contact-book-contact';
+import {Contact} from '../contact';
 import {CurrentContactService} from '../current-contact.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ContactDetailComponent {
   constructor(private currentContact: CurrentContactService) {
   }
 
-  get leContactEnDetail(): ContactBookContact {
+  get leContactEnDetail(): Contact {
     return this.currentContact.contact;
   }
 

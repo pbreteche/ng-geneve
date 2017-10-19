@@ -1,4 +1,4 @@
-export class ContactBookContact {
+export class Contact {
   constructor(
     public firstName = '',
     public lastName: string,

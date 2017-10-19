@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ContactBookContact} from '../contact-book-contact';
+import {Component, OnInit} from '@angular/core';
+import {Contact} from '../contact';
 import {ContactBookService} from '../contact-book.service';
 import {CurrentContactService} from '../current-contact.service';
 
@@ -18,11 +18,11 @@ export class ContactNavigationComponent implements OnInit {
   ngOnInit() {
   }
 
-  get contacts(): ContactBookContact[] {
+  get contacts(): Contact[] {
     return this.contactBook.contacts;
   }
 
-  selectContact(contact: ContactBookContact) {
+  selectContact(contact: Contact) {
     this.currentContact.contact = contact;
   }
 }
