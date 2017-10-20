@@ -12,6 +12,9 @@ import {ContactBookService} from './contact-book.service';
 import {API_CONFIG} from './config';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './in-memory-data.service';
+import {RouterModule} from '@angular/router';
+import { ContactCreateComponent } from './contact-create/contact-create.component';
+import {RoutesServices} from './routes.service';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,13 @@ import {InMemoryDataService} from './in-memory-data.service';
     ContactDetailComponent,
     ContactNavigationComponent,
     ContactSendMailComponent,
+    ContactCreateComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule.forRoot(RoutesServices),
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [

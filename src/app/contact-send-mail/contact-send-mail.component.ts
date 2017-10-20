@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Http} from '@angular/http';
+import {Contact} from '../contact';
+import 'rxjs/add/operator/map';
 
 class Mail {
   recipient: string;
@@ -18,9 +21,13 @@ export class ContactSendMailComponent{
   mail = new Mail();
   newCarbonCopy: string;
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   sendMail() {
+    this.http.post('api/contacts', new Contact('contact', 'ajouté', 'par@utilisateur'))
+      .subscribe(response => {
+        console.log(response);
+      });
     console.info(this.mail);
     this.mail = new Mail();
   }

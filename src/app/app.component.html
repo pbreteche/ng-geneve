@@ -1,6 +1,11 @@
 <app-contact-title></app-contact-title>
-<app-contact-send-mail></app-contact-send-mail>
 <div class="main-workspace">
-  <app-contact-navigation></app-contact-navigation>
-  <app-contact-detail></app-contact-detail>
+  <nav>
+    <ul>
+      <li><a routerLink="contacts">Mes contacts</a></li>
+      <li><a routerLink="contacts/new">Créer un contact</a></li>
+      <li><a routerLink="mailbox">Ma messagerie</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
