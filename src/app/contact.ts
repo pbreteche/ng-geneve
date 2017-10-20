@@ -1,4 +1,6 @@
 export class Contact {
+  id: number;
+
   constructor(
     public firstName = '',
     public lastName = '',

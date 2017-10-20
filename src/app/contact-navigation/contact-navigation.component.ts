@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {Contact} from '../contact';
 import {ContactBookService} from '../contact-book.service';
 import {CurrentContactService} from '../current-contact.service';
@@ -13,7 +14,8 @@ export class ContactNavigationComponent implements OnInit {
 
   constructor(
     private contactBook: ContactBookService,
-    private currentContact: CurrentContactService
+    private currentContact: CurrentContactService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -25,5 +27,6 @@ export class ContactNavigationComponent implements OnInit {
 
   selectContact(contact: Contact) {
     this.currentContact.contact = contact;
+    this.router.navigate(['contacts', 'details', contact.id])
   }
 }
